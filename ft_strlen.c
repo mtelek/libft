@@ -6,13 +6,14 @@
 /*   By: mtelek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:29:11 by mtelek            #+#    #+#             */
-/*   Updated: 2023/09/15 16:24:56 by mtelek           ###   ########.fr       */
+/*   Updated: 2023/09/16 09:42:29 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 #include <stdio.h>
 */
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

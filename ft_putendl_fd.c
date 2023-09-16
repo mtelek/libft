@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtelek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 20:04:05 by mtelek            #+#    #+#             */
-/*   Updated: 2023/09/16 09:43:08 by mtelek           ###   ########.fr       */
+/*   Created: 2023/09/16 20:56:09 by mtelek            #+#    #+#             */
+/*   Updated: 2023/09/16 21:00:42 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (!dest && !src)
-		return (0);
-	while (i < n)
+	if (s[i] != '\0')
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
+		write (1, "\n", 1);
 	}
-	return (dest);
 }
-/*
-int	main(void)
-{
-	char	src[10] = "Hi Barbie";
-	char	dest[sizeof(src)];
 
-	ft_memcpy(dest, src, sizeof(src));
-	printf("%s", dest);
-	return (0);
+/*
+int main(void)
+{
+        char *str = "Hello, World!";
+        int fd = 1;
+
+        ft_putstr(str, fd);
+        return (0);
 }
 */
