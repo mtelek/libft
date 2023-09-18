@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <strings.h>
-#include <stdlib.h>
-*/
+#include "libft.h"
 
 void	*ft_calloc(size_t num, size_t size)
 {
@@ -22,7 +18,7 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*dst;
 
 	tot_size = num * size;
-	if (!(dst == malloc(tot_size)))
+	if (!(dst = malloc(tot_size)))
 		return (0);
 	ft_bzero(dst, tot_size);
 	return (dst);

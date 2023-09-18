@@ -10,20 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-//#include <stdio.h>
-//#include <libft.h> Still have to make the Makefile
-#include <string.h> //It has to be deleted late
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t	i;
+	int	i;
 
-	i = strlen(str);
+	i = ft_strlen(str);
+	if (str[0] == '\0')
+		return (0);
 	while (i >= 0)
 	{
 		if (str[i] == c)
-			return ((char *)&str[i]);
+			return ((char *)str);
 		i--;
 	}
 	return (0);

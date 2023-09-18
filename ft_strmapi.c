@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <ctype.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -19,6 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	str = (char *)malloc(sizeof(char));
 	if (!s || !f || !(str == ft_strdup(s)))
 		return (0);
 	while (str[i] == '\0')

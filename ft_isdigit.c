@@ -9,10 +9,10 @@
 /*   Updated: 2023/09/05 15:14:15 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
-int	ft_isdigit(char c)
+
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
 	if (c > 47 && c < 58)
 		return (1);

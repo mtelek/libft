@@ -22,9 +22,9 @@ void	ft_putendl_fd(char *s, int fd)
 		while (s[i] != '\0')
 		{
 			ft_putchar_fd(s[i], fd);
+			ft_putchar_fd('\0', fd);
 			i++;
 		}
-		write (1, "\n", 1);
 	}
 }
 

@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	int		num;
@@ -68,3 +68,4 @@ int	main(void)
 	free(str);
 	return (0);
 }
+*/

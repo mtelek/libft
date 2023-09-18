@@ -9,10 +9,10 @@
 /*   Updated: 2023/09/06 12:27:41 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
-int	ft_isprint(char c)
+
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
