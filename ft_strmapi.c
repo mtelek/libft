@@ -19,9 +19,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	str = (char *)malloc(sizeof(char));
-	if (!s || !f || !(str == ft_strdup(s)))
+	if (!s || !f || !(str = ft_strdup(s)))
 		return (0);
-	while (str[i] == '\0')
+	while (str[i])
 	{
 		str[i] = f(i, str[i]);
 		i++;

@@ -17,14 +17,16 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+		return ;
 	if (s[i] != '\0')
 	{
 		while (s[i] != '\0')
 		{
 			ft_putchar_fd(s[i], fd);
-			ft_putchar_fd('\0', fd);
 			i++;
 		}
+		write(fd, "\n", 1);
 	}
 }
 
