@@ -14,31 +14,27 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		count;
-	char	*new_string;
+	int		start;
+	int		end;
+	int		trimmed_len;
+	char	*trimmed_str;
 
-	i = 0;
-	j = 0;
-	count = 0;
-	new_string = (char *)malloc(ft_strlen(s1) - count + 1);
+	start = 0;
+	end = ft_strlen(s1) - 1;
 	if (!s1 || !set)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		if (s1[i] == *set)
-			count++;
-		if (s1[i] != *set)
-		{
-			new_string[j] = s1[i];
-			j++;
-		}
-		i++;
-	}
-	new_string[j] = '\0';
-	return (new_string);
+		return (NULL);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (end > start && ft_strchr(set, s1[end]))
+		end--;
+	trimmed_len = end - start + 1;
+	trimmed_str = (char *)malloc(trimmed_len + 1);
+	if (!trimmed_str)
+		return (NULL);
+	ft_strlcpy(trimmed_str, s1 + start, trimmed_len + 1);
+	return (trimmed_str);
 }
+
 /*
 int main()
 {
