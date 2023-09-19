@@ -14,6 +14,15 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (s == NULL)
+		return ;
+    
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
+}
+
+/*void	ft_putendl_fd(char *s, int fd)
+{
 	int	i;
 
 	i = 0;
@@ -30,7 +39,7 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 }
 
-/*
+
 int main(void)
 {
         char *str = "Hello, World!";
