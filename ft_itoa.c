@@ -19,6 +19,13 @@ int	ft_numlen(int n)
 	len = 0;
 	if (n < 0)
 	{
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('-', 1);
+			ft_putchar_fd('2', 1);
+			ft_putstr_fd("147483648", 1);
+			return (0);
+		}
 		len++;
 		n *= -1;
 	}
