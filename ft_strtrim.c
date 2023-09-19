@@ -23,7 +23,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	count = 0;
 	new_string = (char *)malloc(ft_strlen(s1) - count + 1);
-	if (!new_string || !s1 || !set)
+	if (!s1 || !set)
 		return (0);
 	while (s1[i] != '\0')
 	{

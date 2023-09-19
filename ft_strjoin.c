@@ -23,12 +23,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_string = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!new_string)
 		return (0);
-	ft_memcpy(new_string, s1, ft_strlen(s1));
-	while (s2[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		new_string[ft_strlen(new_string) + j] = s2[i];
+		new_string[i] = s1[i];
 		i++;
 	}
+	while (s2[j] != '\0')
+	{
+		new_string[i + j] = s2[j];
+		j++;
+	}
+	new_string[i + j] = '\0';
 	return (new_string);
 }
 /*
