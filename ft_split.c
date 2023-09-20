@@ -31,7 +31,20 @@ static int	count_words(const char *str, char c)
 	return (count);
 }
 
-void	split_1(char const *s, char **split, char c)
+static void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+static int	split_1(char const *s, char **split, char c)
 {
 	int	i;
 	int	j;
@@ -49,33 +62,31 @@ void	split_1(char const *s, char **split, char c)
 			while (s[i] && s[i] != c)
 				i++;
 			split[j++] = ft_substr(s, start, i - start);
+			if (split[j - 1] == NULL)
+			{
+				free_split(split);
+				return (0);
+			}
 		}
 	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		word_count;
 	char	**split;
-	int		i;
 
-	i = 0;
+	if (!s)
+		return (NULL);
 	word_count = count_words(s, c);
 	split = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!split)
-		return (0);
+		return (NULL);
 	if (split_1(s, split, c))
-	{
-		while (i < word_count)
-		{
-			free(split[i]);
-			i++;
-		}
-		free(split);
-		return (0);
-	}
-	split_1(s, split, c);
-	split[word_count] = NULL;
+		split[word_count] = NULL;
+	else
+		return (NULL);
 	return (split);
 }
 /*
