@@ -6,7 +6,7 @@
 /*   By: mtelek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:57:17 by mtelek            #+#    #+#             */
-/*   Updated: 2023/09/08 14:54:33 by mtelek           ###   ########.fr       */
+/*   Updated: 2023/09/20 17:30:31 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	i;
-	const char *ptr;
+	int			i;
+	const char	*ptr;
 
 	i = ft_strlen(str);
 	while (i >= 0)
