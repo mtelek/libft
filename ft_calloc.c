@@ -6,7 +6,7 @@
 /*   By: mtelek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:08:13 by mtelek            #+#    #+#             */
-/*   Updated: 2023/09/12 12:30:00 by mtelek           ###   ########.fr       */
+/*   Updated: 2023/09/20 17:31:14 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*dst;
 
 	tot_size = num * size;
-    dst = malloc(tot_size);
+	dst = malloc(tot_size);
 	if (!dst)
 		return (0);
 	ft_bzero(dst, tot_size);
