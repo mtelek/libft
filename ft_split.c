@@ -6,7 +6,7 @@
 /*   By: mtelek <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 23:48:42 by mtelek            #+#    #+#             */
-/*   Updated: 2023/09/18 18:15:05 by mtelek           ###   ########.fr       */
+/*   Updated: 2023/09/20 18:22:38 by mtelek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,23 @@ char	**ft_split(char const *s, char c)
 {
 	int		word_count;
 	char	**split;
+	int		i;
 
+	i = 0;
 	word_count = count_words(s, c);
 	split = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!split)
 		return (0);
+	if (split_1(s, split, c))
+	{
+		while (i < word_count)
+		{
+			free(split[i]);
+			i++;
+		}
+		free(split);
+		return (0);
+	}
 	split_1(s, split, c);
 	split[word_count] = NULL;
 	return (split);
