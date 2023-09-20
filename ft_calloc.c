@@ -18,7 +18,8 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*dst;
 
 	tot_size = num * size;
-	if (!(dst = malloc(tot_size)))
+    dst = malloc(tot_size);
+	if (!dst)
 		return (0);
 	ft_bzero(dst, tot_size);
 	return (dst);
